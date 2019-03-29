@@ -326,8 +326,8 @@
 			// Click event for group items
 			function itemGroupAnchorClick( e, $levelHolder, $item ) {
 				if( $(instance).find( 'div.levelHolderClass' ).is(':animated') ) return false;
-				instance.settings.onGroupItemClick.apply(this, Array.prototype.slice.call([e, $levelHolder, $item, instance.settings]));
-				expandMenu( $item.find( 'div:first' ) );
+				var expand = instance.settings.onGroupItemClick.apply(this, Array.prototype.slice.call([e, $levelHolder, $item, instance.settings]));
+				if ( expand ) expandMenu( $item.find( 'div:first' ) );
 				if( instance.settings.preventGroupItemClick ) stopEventPropagation(e);
 			}
 
