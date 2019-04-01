@@ -42,6 +42,7 @@
 				overlapWidth: 40,
 				preventItemClick: true,
 				preventGroupItemClick: true,
+				scrollToTop: false,
 				swipe: 'both',
 				durationSlideOut: 400,
 				durationSlideDown: 500,
@@ -850,6 +851,7 @@
 								lwidth = baseWidth - ieShadowFilterDistortion + ( parentLevelHoldersLen - $( val ).attr( 'data-level' ) ) * ( instance.settings.overlapWidth + ieShadowFilterDistortion );
 								if(instance.settings.container.width() < lwidth && instance.settings.mode == 'overlap' )
 									sizeElementWidth( instance.settings.container , lwidth );
+								if( instance.settings.scrollToTop) $( val ).scrollTop(0);
 								if( instance.settings.direction == 'rtl' ) {
 									$( val ).stop().animate({
 										marginRight: 0,
